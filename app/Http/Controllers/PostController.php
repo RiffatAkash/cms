@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\Categories\CreateCategoryRequest;
-use App\Http\Requests\Categories\UpdateCategoriesRequest;
 
-class CategoriesController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +13,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('categories.index')->with('categories',Category::all());
+        return view('posts.index');
     }
 
     /**
@@ -26,7 +23,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('posts.create');
     }
 
     /**
@@ -35,21 +32,9 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateCategoryRequest $request)
+    public function store(Request $request)
     {
-       
-      //  $category = new Category();
-
-        Category::create([
-
-            'name' => $request->name
-        ]);
-
-
-        session()->flash('success','Category Created Successfu;;y');
-
-        return redirect(route('categories.index'));
-
+        //
     }
 
     /**
@@ -69,9 +54,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        return view('categories.create')->with('category',$category);
+        //
     }
 
     /**
@@ -81,16 +66,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoriesRequest $request, Category $category)
+    public function update(Request $request, $id)
     {
-        $category->update([
-            'name' => $request->name
-        ]);
-
-
-        session()->flash('success','Category Updated Successfully');
-
-        return redirect(route('categories.index'));
+        //
     }
 
     /**
@@ -99,12 +77,8 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $category->delete();
-
-        session()->flash('success','Category Deleted Successfully');
-
-        return redirect(route('categories.index'));
+        //
     }
 }

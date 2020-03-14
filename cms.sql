@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2020 at 04:00 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.3.15
+-- Generation Time: Mar 14, 2020 at 12:14 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cmd`
+-- Database: `cms`
 --
 
 -- --------------------------------------------------------
@@ -40,10 +40,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Riffat', '2020-03-13 11:50:06', '2020-03-13 11:50:06'),
-(2, 'Laravel', '2020-03-13 11:56:24', '2020-03-13 11:56:24'),
-(3, 'VueJs', '2020-03-13 12:00:36', '2020-03-13 12:00:36'),
-(4, 'Anguar', '2020-03-13 12:02:18', '2020-03-13 12:02:18');
+(5, 'Laravel', '2020-03-14 02:18:38', '2020-03-14 02:18:38'),
+(6, 'PHP', '2020-03-14 03:42:32', '2020-03-14 03:42:32'),
+(7, 'Magento', '2020-03-14 05:03:21', '2020-03-14 05:03:21');
 
 -- --------------------------------------------------------
 
@@ -118,7 +117,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Riffat Akash', 'riffatakash@gmail.com', NULL, '$2y$10$CfeTNDwjco6wCFCz6ZOM.OESOX3EzxsgUQzw5deEt.T3aEx4tdWsC', NULL, '2020-03-12 10:31:07', '2020-03-12 10:31:07');
+(1, 'Riffat', 'riffatakash@gmail.com', NULL, '$2y$10$C8w.30CkTAfJuBEZY0Mnr.3UoPPGwuDCu/x53AlZrQ6bYmPxuG.c2', NULL, '2020-03-11 04:19:51', '2020-03-11 04:19:51');
 
 --
 -- Indexes for dumped tables
@@ -163,7 +162,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
